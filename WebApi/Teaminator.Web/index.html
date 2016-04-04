@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html ng-app="Teaminator">
+<head>
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Teaminator</title>
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--<link rel="shortcut icon" href="favicon.ico" />-->
+</head>
+<body>
+    <div id="page">
+        <header class="container">
+            <div id="menu" class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                    <div id="logo">
+                        <a href='#/'>
+                            <!--<h1>Teaminator</h1>-->
+                        </a>
+                    </div>
+                </div>
+                <!--<div class="navbar-collapse collapse" data-collapse="!navbarExpanded">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-ng-class="{'active':isActive('/explore')}"><a href="#/explore">Explore</a></li>
+                        <li data-ng-class="{'active':isActive('/places')}"><a href="#/places">My Places</a></li>
+                        <li data-ng-class="{'active':isActive('/about')}"><a href="#/about">About</a></li>
+                    </ul>
+                </div>-->
+            </div>
+        </header>
+        <section id="body" class="container">
+            <div data-ng-view=""></div>
+        </section>
+        <hr />
+        <footer class="container"></footer>
+    </div>
+    <!-- 3rd party libraries -->
+
+    <script src="scripts/angular.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js"></script>-->
+    <script src="scripts/angularjs.1.5.3/content/Scripts/angular-route.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-resource.min.js"></script>-->
+    <script src="scripts/angularjs.1.5.3/content/Scripts/angular-resource.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.min.js"></script>-->
+    <script src="scripts/angularjs.1.5.3/content/Scripts/angular-animate.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>-->
+    <script src="scripts/jQuery.2.2.1/Content/Scripts/jquery-2.2.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
+
+    <!-- Load app main script -->
+    <script src="presentation/app.js"></script>
+    <!-- Load services -->
+    <script src="presentation/services/formatPropertyService.js"></script>
+    <script src="presentation/factories/restResourceFactory.js"></script>
+    <script src="presentation/services/userService.js"></script>
+    <script src="presentation/services/placementService.js"></script>
+    <script src="presentation/services/missileService.js"></script>
+    <script src="presentation/directives/changePositionDirective.js"></script>
+
+    <!--Load factories-->
+    <!-- Load controllers -->
+    <script src="presentation/controllers/userListController.js"></script>
+    <script src="presentation/controllers/userController.js"></script>
+    <!--<script src="presentation/controllers/placesExplorerController.js"></script>
+    <script src="presentation/controllers/userContextController.js"></script>
+    <script src="presentation/controllers/myPlacesController.js"></script>
+    <script src="presentation/controllers/navigationController.js"></script>
+    <script src="presentation/controllers/aboutController.js"></script>-->
+    <!-- Load custom filters -->
+    <!--<script src="presentation/filters/placeNameCategoryFilter.js"></script>-->
+    <!-- Load custom directives -->
+    <!--<script src="presentation/directives/fsUnique.js"></script>-->
+</body>
+</html>
+

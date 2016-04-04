@@ -13,9 +13,11 @@ namespace Teaminator.Settings
 
         public static void Init()
         {
-            Settings = newSettingsFile();
-            if(File.Exists(_filename))Load();
-            else Save();
+            Settings = NewSettingsFile();
+            if(File.Exists(_filename)) //"C:\\Users\\eriks\\Google Drive\\Mina mappar\\Kod\\Teaminator (1)\\WebApi\\Teaminator.Settings"))
+                Load();
+            else
+                Save();
         }
         public static void Load()
         {
@@ -33,7 +35,7 @@ namespace Teaminator.Settings
             sw.Close();
         }
 
-        private static Domain.Models.Settings newSettingsFile()
+        private static Domain.Models.Settings NewSettingsFile()
         {
             var settings = new Domain.Models.Settings();
             settings.BuildIds = new string[] {};

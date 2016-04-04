@@ -22,7 +22,7 @@ namespace Teaminator.WebApi
             BuildDetails currentThreat = null;
             var listner = new TeamcityService.TeamcityListener(buildsToWatch);
             var missileService = new UserMissileService();
-
+            
             listner.BuildSuccess += (sender, args) =>
             {
                 var build = sender as BuildDetails;
