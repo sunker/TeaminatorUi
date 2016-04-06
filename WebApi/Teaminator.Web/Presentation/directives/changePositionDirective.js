@@ -14,7 +14,7 @@ app.directive("changePosition", [function () {
             });
         },
         controller: ['$scope', 'missileService', 'placementService', function ($scope, missileService, placementService) {
-
+            
             $scope.changeXPosition = function () {
                 $scope.x = $scope.x.replace(/[^\d]/g, '');
                 missileService.aimX($scope.x);

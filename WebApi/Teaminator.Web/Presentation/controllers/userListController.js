@@ -9,7 +9,6 @@ app.controller("userListController", ["$scope", "userService", "$location", func
 
     $scope.displayUser = function(id) {
         var url = '/users/' + id;
-        //$location.path(url);
         $location.path(url);
     };
 }]);
