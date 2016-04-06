@@ -1,9 +1,10 @@
 ﻿'use strict';
 
-app.directive("changePosition", [function () {
+app.directive("editUser", [function () {
     return {
         restrict: 'EA',
         scope: {
+            username: '@',
             x: '@',
             y: '@',
             pos: '@'
@@ -34,6 +35,6 @@ app.directive("changePosition", [function () {
             };
 
         }],
-        templateUrl: "/Presentation/views/changePositionTemplate.html"
+        templateUrl: "/Presentation/views/editUserTemplate.html"
     }
 }])

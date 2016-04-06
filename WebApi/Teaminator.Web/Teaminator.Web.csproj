@@ -89,13 +89,13 @@
     <Content Include="Presentation\app.js" />
     <Content Include="Presentation\controllers\userController.js" />
     <Content Include="Presentation\controllers\userListController.js" />
-    <Content Include="Presentation\directives\changePositionDirective.js" />
+    <Content Include="Presentation\directives\editUserDirective.js" />
     <Content Include="Presentation\factories\restResourceFactory.js" />
     <Content Include="Presentation\services\formatPropertyService.js" />
     <Content Include="Presentation\services\placementService.js" />
     <Content Include="Presentation\services\missileService.js" />
     <Content Include="Presentation\services\userService.js" />
-    <Content Include="Presentation\views\changePositionTemplate.html" />
+    <Content Include="Presentation\views\editUserTemplate.html" />
     <Content Include="Presentation\views\userListTemplate.html" />
     <Content Include="Presentation\views\userTemplate.html" />
     <Content Include="scripts\angular-mocks.js" />
