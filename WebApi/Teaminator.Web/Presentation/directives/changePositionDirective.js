@@ -5,25 +5,32 @@ app.directive("changePosition", [function () {
         restrict: 'EA',
         scope: {
             x: '@',
-            y: '@'
+            y: '@',
+            pos: '@'
         },  
-        link: function (scope, element, attrs) {
+        link: function ($scope, element, attrs) {
             element.bind("click", function () {
-                
+                //$scope.showChangePosition = true;
             });
         },
         controller: ['$scope', 'missileService', 'placementService', function ($scope, missileService, placementService) {
 
             $scope.changeXPosition = function () {
+                $scope.x = $scope.x.replace(/[^\d]/g, '');
                 missileService.aimX($scope.x);
             };
 
             $scope.changeYPosition = function () {
+                $scope.y = $scope.y.replace(/[^\d]/g, '');
                 missileService.aimY($scope.y);
             };
 
+            $scope.toggleShow = function () {
+                $scope.showChangePosition = !$scope.showChangePosition;
+            };
+
             $scope.save = function() {
-                placementService.updatePosition()
+                placementService.updatePosition($scope.pos, $scope.X, $scope.Y);
             };
 
         }],

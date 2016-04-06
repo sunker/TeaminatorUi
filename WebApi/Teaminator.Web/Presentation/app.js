@@ -1,4 +1,4 @@
-﻿var app = angular.module('Teaminator', ['ngRoute', 'ngResource', 'ui.bootstrap']);
+﻿var app = angular.module('Teaminator', ['ngRoute', 'ngAnimate', 'ngResource', 'ui.bootstrap']);
 
 app.config(function ($routeProvider) {
 

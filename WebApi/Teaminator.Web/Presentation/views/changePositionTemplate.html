@@ -1,15 +1,15 @@
 ﻿
-<button type="button" class="btn btn-primary btn-md">Change position</button>
+<button type="button" class="btn btn-primary btn-md" ng-click="toggleShow()">Change position</button>
 
-<article>
+<article ng-show="showChangePosition" class="fadein fadeout">
+    <form name="changePositionForm">
+        <p>
+            <strong>X pos:</strong><span><input type="text" ng-model="x" ng-blur="changeXPosition()" /></span>
+        </p>
+        <p>
+            <strong>Y pos:</strong><span><input type="text" ng-model="y" ng-blur="changeYPosition()" /></span>
+        </p>
 
-    <p>
-        <strong>X pos:</strong><span><input type="text" ng-model="x" ng-blur="changeXPosition()" /></span>
-    </p>
-    <p>
-        <strong>Y pos:</strong><span><input type="text" ng-model="y" ng-blur="changeYPosition()"/></span>
-    </p>
-
-    <button type="button" class="btn btn-success btn-md" ng-click="Save()">Save position</button>
-
+        <button type="button" class="btn btn-success btn-md" ng-click="Save()">Save position</button>
+    </form>
 </article>                                      
