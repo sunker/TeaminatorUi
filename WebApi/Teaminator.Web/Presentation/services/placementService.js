@@ -13,4 +13,9 @@ app.service("placementService", ["restResourceFactory", function (restResourceFa
         var restReq = restResourceFactory(rootUrl + 'Update/' + pos + '/' + x + ',' + 'y'); //Update/{pos}/{x},{y}
         return restReq.get().$promise;
     };
+
+    this.mapUserToPosition = function (userId, positionId) {
+        var restReq = restResourceFactory(rootUrl + 'map/' + userId + ',' + positionId);
+        return restReq.get().$promise;
+    };
 }]);

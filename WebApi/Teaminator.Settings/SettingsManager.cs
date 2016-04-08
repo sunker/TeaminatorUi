@@ -14,7 +14,8 @@ namespace Teaminator.Settings
         public static void Init()
         {
             Settings = NewSettingsFile();
-            if(File.Exists(_filename)) //"C:\\Users\\eriks\\Google Drive\\Mina mappar\\Kod\\Teaminator (1)\\WebApi\\Teaminator.Settings"))
+            var path = Path.Combine(System.Environment.CurrentDirectory, _filename);
+            if (File.Exists(path)) //"C:\\Users\\eriks\\Google Drive\\Mina mappar\\Kod\\Teaminator (1)\\WebApi\\Teaminator.Settings"))
                 Load();
             else
                 Save();

@@ -39,13 +39,13 @@ using Teaminator.Settings;
 
         [HttpGet]
         [Route("add/{userName}")]
-        public int Post(string userName)
+        public User Post(string userName)
         {
-            if (SettingsManager.Settings.Users.Any(u => u.Username == userName)) return -1;
+            if (SettingsManager.Settings.Users.Any(u => u.Username == userName)) return null;
             var user = new User() { Username = userName, Id = SettingsManager.Settings.Users.Count };
             SettingsManager.Settings.Users.Add(user);
             SettingsManager.Save();
-            return user.Id;
+            return user;
         }
     }
 }

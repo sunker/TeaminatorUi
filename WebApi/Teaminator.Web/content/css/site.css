@@ -31,9 +31,12 @@ strong {
     margin-right: 10px;
 }
 
+a[ng-click]{
+    cursor: pointer;
+}
 
 .ng-hide-add, .ng-hide-remove {
-    display: block !important; 
+    display: block !important;
 }
 
 .cssSlideUp {
@@ -43,7 +46,7 @@ strong {
     -o-transition: .3s linear all;
     transition: .3s linear all;
     overflow: hidden;
-    height: 120px;
+    height: 200px;
 }
 
 .cssSlideUp.ng-hide {

@@ -4,10 +4,11 @@ app.service("missileService", ["restResourceFactory", function (restResourceFact
 
     var rootUrl = 'missile/';
 
-    function aim(x, y) {
-        var restReq = restResourceFactory(rootUrl + 'aim/' + x + ',' + y);
+    this.aim = function (x, y) {
+        var url = rootUrl + 'aim/' + x + ',' + y;
+        var restReq = restResourceFactory(url);
         restReq.get();
-    }
+    };
 
     this.aimY = function(y) {
         this.getCurrentPosition().then(function (pos) {

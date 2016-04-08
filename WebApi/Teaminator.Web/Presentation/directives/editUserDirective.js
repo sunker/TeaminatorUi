@@ -8,14 +8,15 @@ app.directive("editUser", [function () {
             x: '@',
             y: '@',
             pos: '@'
-        },  
+        },
         link: function ($scope, element, attrs) {
             element.bind("click", function () {
-                //$scope.showChangePosition = true;
             });
         },
         controller: ['$scope', 'missileService', 'placementService', function ($scope, missileService, placementService) {
-            
+            $scope.showChangePosition = true;
+            $scope.showMapUserModal = false;
+
             $scope.changeXPosition = function () {
                 $scope.x = $scope.x.replace(/[^\d]/g, '');
                 missileService.aimX($scope.x);
@@ -34,6 +35,9 @@ app.directive("editUser", [function () {
                 placementService.updatePosition($scope.pos, $scope.X, $scope.Y);
             };
 
+            $scope.mapUser = function () {
+                $scope.showMapUserModal = !$scope.showMapUserModal;
+            };
         }],
         templateUrl: "/Presentation/views/editUserTemplate.html"
     }
