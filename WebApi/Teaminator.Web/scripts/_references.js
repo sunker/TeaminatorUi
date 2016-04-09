@@ -4,7 +4,6 @@
 /// <reference path="../Presentation/controllers/userListController.js" />
 /// <reference path="../presentation/controllers/userprofilecontroller.js" />
 /// <reference path="../presentation/directives/edituserdirective.js" />
-/// <reference path="../presentation/directives/edituserdirective2.js" />
 /// <reference path="../presentation/directives/mapadditionaluserdirective.js" />
 /// <reference path="../presentation/directives/modaldirective.js" />
 /// <reference path="../presentation/directives/userdirective.js" />

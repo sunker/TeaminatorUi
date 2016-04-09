@@ -84,13 +84,13 @@
     <Content Include="content\css\bootstrap.css" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\site.css" />
+    <Content Include="content\teaminatorlogo.png" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="Presentation\app.js" />
     <Content Include="Presentation\controllers\createUserController.js" />
     <Content Include="Presentation\controllers\userProfileController.js" />
     <Content Include="Presentation\controllers\userListController.js" />
-    <Content Include="Presentation\directives\editUserDirective2.js" />
     <Content Include="Presentation\directives\userDirective.js" />
     <Content Include="Presentation\directives\editUserDirective.js" />
     <Content Include="Presentation\directives\mapAdditionalUserDirective.js" />

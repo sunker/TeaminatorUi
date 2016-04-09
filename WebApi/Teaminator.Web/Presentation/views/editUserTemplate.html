@@ -7,10 +7,16 @@
         <div class="form-group">
             <label for="username" class="control-label col-sm-2">git username:</label>
             <div class="col-sm-5">
-                <input id="username" type="text" class="form-control" ng-model="username" />
+                <input id="username" name="username" type="text" class="form-control" required ng-model="username" ng-minlength="1" ng-blur="usernameCheck()" />
             </div>
             <div class="col-sm-5">
                 <a class="italic" ng-click="mapUser()"><em>Map another username to this position?</em></a>
+            </div>
+
+            <div class="col-sm-5" ng-messages="changePositionForm.username.$error" ng-if='changePositionForm.username.$dirty' style="color:maroon" role="alert">
+                <div ng-show="changePositionForm.$error.usernametaken">This username is already taken</div>
+                <div ng-message="required">You did not enter a username</div>
+                <div ng-message="minlength">Username is too short</div>
             </div>
         </div>
 

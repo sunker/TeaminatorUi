@@ -1,14 +1,17 @@
-﻿<article>
+﻿<a href="#/users" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Back to users</a>
+
+<hr />
+
+<article>
 
     <form name="addUserForm" class="form-horizontal" role="form">
         <div class="form-group">
             <label for="username" class="control-label col-sm-2">username:</label>
             <div class="col-sm-5">
-                <input id="username" name="username" type="text" class="form-control" required ng-model="username" ng-minlength="1"  ng-blur="usernameCheck()"/>
+                <input id="username" name="username" type="text" class="form-control" required ng-model="username" ng-minlength="1" ng-blur="usernameCheck()" />
             </div>
-            <!--<pre>changePositionForm.username.$error = {{ addUserForm.username.$error | json }}</pre>-->
 
-            <div ng-messages="addUserForm.username.$error" ng-if='addUserForm.username.$dirty' style="color:maroon" role="alert">
+            <div  class="col-sm-5" ng-messages="addUserForm.username.$error" ng-if='addUserForm.username.$dirty' style="color:maroon" role="alert">
                 <div ng-show="addUserForm.$error.usernametaken">This username is already taken</div>
                 <div ng-message="required">You did not enter a username</div>
                 <div ng-message="minlength">Username is too short</div>
@@ -27,6 +30,11 @@
                 <input id="y" type="text" class="form-control" ng-model="y" required ng-blur="changeYPosition()" class="form-control" />
             </div>
         </div>
-        <button type="button" class="btn btn-success btn-md" ng-disabled="addUserForm.$invalid" ng-click="save()">Add user</button>
+        <div class="form-group">
+            <div class="col-sm-5">
+                <button type="button" class="btn btn-success btn-md" ng-disabled="addUserForm.$invalid" ng-click="save()">Add user</button>
+            </div>
+        </div>
+
     </form>
 </article>

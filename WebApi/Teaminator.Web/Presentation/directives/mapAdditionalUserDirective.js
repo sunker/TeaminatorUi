@@ -15,15 +15,24 @@ app.directive("mapAdditionalUser", [
             },
             controller: ['$scope', 'userService', 'placementService', '$location', function ($scope, userService, placementService, $location) {
 
+                $scope.usernameCheck = function () {
+                    userService.usernameExist($scope.username).then(function (response) {
+                        if (!!response.data === true) {
+                            $scope.mapUserNameForm.$setValidity("usernametaken", false);
+                        } else {
+                            $scope.mapUserNameForm.$setValidity("usernametaken", true);
+                        }
+                    });
+                };
+
                 $scope.save = function () {
                     userService.createUser($scope.username).then(function (user) {
                         if (!user.Id) {
-                            //Username taken
+                            $scope.mapUserNameForm.$setValidity("usernametaken", false);
                         } else {
                             placementService.mapUserToPosition(user.Id, $scope.pos).then(function (response) {
                                 if (response) {
                                     $scope.show= false;
-                                    //$scope.$apply();
                                     var url = '/users/' + user.Id;
                                     $location.path(url);
                                 }

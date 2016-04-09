@@ -36,6 +36,16 @@ app.directive("editUser", [function () {
                 missileService.aimY($scope.y);
             };
             
+            $scope.usernameCheck = function () {
+                userService.usernameExist($scope.username).then(function (response) {
+                    if (!!response.data === true) {
+                        $scope.changePositionForm.$setValidity("usernametaken", false);
+                    } else {
+                        $scope.changePositionForm   .$setValidity("usernametaken", true);
+                    }
+                });
+            };
+
             $scope.save = function() {
                 placementService.updatePosition($scope.pos, $scope.x, $scope.y).then(function () {
 

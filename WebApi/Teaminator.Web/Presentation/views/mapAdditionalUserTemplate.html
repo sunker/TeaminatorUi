@@ -1,8 +1,14 @@
-﻿<form role="form" class="form-horizontal">
+﻿<form name="mapUserNameForm" role="form" class="form-horizontal">
     <div class="form-group">
         <label for="username" class="control-label col-sm-2">username:</label>
         <div class="col-sm-5">
-            <input id="username" type="text" class="form-control" ng-model="username" placeholder="New username"/>
+            <input id="username" name="username" type="text" class="form-control" required ng-model="username" ng-minlength="1" ng-blur="usernameCheck()" placeholder="New username"/>
+        </div>
+
+        <div class="col-sm-5" ng-messages="mapUserNameForm.username.$error" ng-if='mapUserNameForm.username.$dirty' style="color:maroon" role="alert">
+            <div ng-show="mapUserNameForm.$error.usernametaken">This username is already taken</div>
+            <div ng-message="required">You did not enter a username</div>
+            <div ng-message="minlength">Username is too short</div>
         </div>
     </div>
     <div class="form-group">

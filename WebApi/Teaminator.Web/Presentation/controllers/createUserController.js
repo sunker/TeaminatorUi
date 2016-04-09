@@ -29,10 +29,9 @@ function ($scope, missileService, placementService, userService, $location) {
 
     $scope.save = function () {
 
-        userService.createUser($scope.username).then(function (response) {
+        userService.createUser($scope.username, $scope.x, $scope.y).then(function (response) {
             if (response.Id == undefined) {
                 $scope.addUserForm.$setValidity("usernametaken", false);
-                //throw ("Username already exist");
             } else {
                 var userid = response.Id;
                 placementService.addPosition($scope.x, $scope.y).then(function (response) {
