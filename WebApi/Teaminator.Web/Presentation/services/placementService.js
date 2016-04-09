@@ -10,7 +10,12 @@ app.service("placementService", ["restResourceFactory", function (restResourceFa
     };
 
     this.updatePosition = function (pos, x, y) {
-        var restReq = restResourceFactory(rootUrl + 'Update/' + pos + '/' + x + ',' + 'y'); //Update/{pos}/{x},{y}
+        var restReq = restResourceFactory(rootUrl + 'Update/' + pos + '/' + x + ',' + y);
+        return restReq.get().$promise;
+    };
+
+    this.addPosition = function (x, y) {
+        var restReq = restResourceFactory(rootUrl + 'Add/' + x + ',' + y);
         return restReq.get().$promise;
     };
 

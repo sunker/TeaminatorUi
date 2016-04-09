@@ -87,8 +87,11 @@
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="Presentation\app.js" />
-    <Content Include="Presentation\controllers\userController.js" />
+    <Content Include="Presentation\controllers\createUserController.js" />
+    <Content Include="Presentation\controllers\userProfileController.js" />
     <Content Include="Presentation\controllers\userListController.js" />
+    <Content Include="Presentation\directives\editUserDirective2.js" />
+    <Content Include="Presentation\directives\userDirective.js" />
     <Content Include="Presentation\directives\editUserDirective.js" />
     <Content Include="Presentation\directives\mapAdditionalUserDirective.js" />
     <Content Include="Presentation\directives\modalDirective.js" />
@@ -97,10 +100,12 @@
     <Content Include="Presentation\services\placementService.js" />
     <Content Include="Presentation\services\missileService.js" />
     <Content Include="Presentation\services\userService.js" />
+    <Content Include="Presentation\views\createUserTemplate.html" />
     <Content Include="Presentation\views\editUserTemplate.html" />
     <Content Include="Presentation\views\mapAdditionalUserTemplate.html" />
     <Content Include="Presentation\views\modalTemplate.html" />
     <Content Include="Presentation\views\userListTemplate.html" />
+    <Content Include="Presentation\views\userProfileTemplate.html" />
     <Content Include="Presentation\views\userTemplate.html" />
     <Content Include="scripts\angular-mocks.js" />
     <None Include="scripts\angular.intellisense.js" />

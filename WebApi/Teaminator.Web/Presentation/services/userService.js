@@ -15,8 +15,23 @@ app.service("userService", ["restResourceFactory", function (restResourceFactory
         return restReq.get().$promise;
     };
 
+    this.updateUsername = function (id, username) {
+        var restReq = restResourceFactory(rootUrl + 'update/' + id + ',' + username);
+        return restReq.get().$promise;
+    };
+
     this.createUser = function (username) {
         var restReq = restResourceFactory(rootUrl + 'add/' + username);
+        return restReq.get().$promise;
+    };
+
+    this.usernameExist = function (username) {
+        var restReq = restResourceFactory(rootUrl + 'exist/' + username);
+        return restReq.exist().$promise;
+    };
+
+    this.deleteUser = function (id) {
+        var restReq = restResourceFactory(rootUrl + 'delete/' + id);
         return restReq.get().$promise;
     };
 }]);

@@ -1,7 +1,27 @@
-﻿<h2>Users</h2>
+﻿<!--<ul class="useritem">
+                    <li ng-repeat="user in users">
+                        <a ng-click="displayUser(user.Id)">{{user.Username}}</a>
+                    </li>
+                </ul>-->
 
-<ul class="useritem">
-    <li ng-repeat="user in users">
-        <a ng-click="displayUser(user.Id)">{{user.Username}}</a>
-    </li>
-</ul>
+<table class="table user-list">
+    <thead>
+        <tr>
+            <th><span>User</span></th>
+            <th><span>X</span></th>
+            <th><span>Y</span></th>
+            <th><span><input type="text" ng-model="usernameFilter" placeholder="Search user" class="form-control" /></span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr user ng-repeat="user in users | filter: usernameFilter | orderBy:'+Username'" data="user" delete-user="deleteUser(id)" class="my-repeat-animation">
+            <!--<user/>-->
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-primary btn-md" ng-click="addUser()">Add user</button>
+
+<modal title="" visible="showMapUserModal">
+    <map-additional-user x="{{x}}" y="{{y}}" pos="{{pos}}" show="showMapUserModal"></map-additional-user>
+</modal>

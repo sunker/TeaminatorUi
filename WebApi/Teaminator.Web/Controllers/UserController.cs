@@ -19,14 +19,6 @@ using Teaminator.Settings;
         [Route("list")]
         public IEnumerable<User> Get()
         {
-            //return new List<User>()
-            //           {
-            //               new User() {Id = 1, Username = "Erik Sundell" },
-            //               new User() {Id = 2, Username = "Erik 2" },
-            //               new User() {Id = 3, Username = "Sunker" },
-            //               new User() {Id = 4, Username = "ersud" },
-            //               new User() {Id = 5, Username = "Användare 2" },
-            //           };
             return SettingsManager.Settings.Users;
         }
 
@@ -38,6 +30,28 @@ using Teaminator.Settings;
         }
 
         [HttpGet]
+        [Route("update/{id},{username}")]
+        public User Get(int id, string username)
+        {
+            var user = SettingsManager.Settings.Users.FirstOrDefault(u => u.Id == id);
+            if (user != null) user.Username = username;
+            SettingsManager.Save();
+            return user;
+        }
+
+        [HttpGet]
+        [Route("delete/{id}")]
+        public bool Delete(int id)
+        {
+            var user = SettingsManager.Settings.Users.SingleOrDefault(u => u.Id == id);
+            if (user == null) return false;
+            SettingsManager.Settings.Users.Remove(user);
+            SettingsManager.Save();
+            return true;
+        }
+
+
+        [HttpGet]
         [Route("add/{userName}")]
         public User Post(string userName)
         {
@@ -46,6 +60,13 @@ using Teaminator.Settings;
             SettingsManager.Settings.Users.Add(user);
             SettingsManager.Save();
             return user;
+        }
+
+        [HttpGet]
+        [Route("exist/{userName}")]
+        public int Exist(string userName)
+        {
+            return SettingsManager.Settings.Users.Any(u => u.Username == userName) ? 1 : 0;
         }
     }
 }

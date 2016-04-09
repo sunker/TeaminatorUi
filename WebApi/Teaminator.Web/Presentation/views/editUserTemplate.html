@@ -7,7 +7,7 @@
         <div class="form-group">
             <label for="username" class="control-label col-sm-2">git username:</label>
             <div class="col-sm-5">
-                <input id="username" type="text" class="form-control" ng-model="username" ng-blur="changeXPosition()" />
+                <input id="username" type="text" class="form-control" ng-model="username" />
             </div>
             <div class="col-sm-5">
                 <a class="italic" ng-click="mapUser()"><em>Map another username to this position?</em></a>
@@ -31,8 +31,8 @@
 </article>
 
 
-<modal title="" ng-if="showMapUserModal" visible="{{showMapUserModal}}">
-    <map-additional-user x="{{x}}" y="{{y}}" pos="{{pos}}" showMapUserModal="showMapUserModal"></map-additional-user>
+<modal title="" visible="showMapUserModal">
+    <map-additional-user x="{{x}}" y="{{y}}" pos="{{pos}}" show="showMapUserModal"></map-additional-user>
 </modal>
 
 

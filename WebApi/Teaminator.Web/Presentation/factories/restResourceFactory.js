@@ -27,6 +27,13 @@ app.factory("restResourceFactory", ["$resource", "formatPropertyService",
                         return formatPropertyService.formatSingleObjectResponse(data);
                     }
                 },
+                "exist": {
+                    method: "GET",
+                    params: { id: "@id" },
+                    transformResponse: function (data, headers) {
+                        return { data: formatPropertyService.formatSingleObjectResponse(data) };
+                    }
+                },
                 "save": {
                     method: "POST",
                     transformResponse: function (data, headers) {

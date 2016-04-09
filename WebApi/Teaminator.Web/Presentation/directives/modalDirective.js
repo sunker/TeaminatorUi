@@ -3,7 +3,7 @@
 'use strict';
 
 app.directive("modal", [
-    function() {
+    function () {
         return {
             templateUrl: "/Presentation/views/modalTemplate.html",
             restrict: 'E',
@@ -14,20 +14,22 @@ app.directive("modal", [
                 scope.title = attrs.title;
 
                 scope.$watch(attrs.visible, function (value) {
-                    if(value == true)
+                    if (value == true)
                         $(element).modal('show');
-                    else
+                    else {
                         $(element).modal('hide');
+                        $('.modal-backdrop').remove();
+                    }
                 });
 
-                $(element).on('shown.bs.modal', function(){
-                    scope.$apply(function(){
+                $(element).on('shown.bs.modal', function () {
+                    scope.$apply(function () {
                         scope.$parent[attrs.visible] = true;
                     });
                 });
 
-                $(element).on('hidden.bs.modal', function(){
-                    scope.$apply(function(){
+                $(element).on('hidden.bs.modal', function () {
+                    scope.$apply(function () {
                         scope.$parent[attrs.visible] = false;
                     });
                 });

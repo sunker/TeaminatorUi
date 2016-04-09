@@ -1,10 +1,22 @@
-﻿<article class="userDetail">
-    <h2>{{user.Username}}</h2>
-
-    <p><strong>X</strong><span>{{position.X}}</span></p>
-
-    <p><strong>Y</strong><span>{{position.Y}}</span></p>
-
-    <edit-User username="{{user.Username}}" pos="{{position.Id}}" x="{{position.X}}" y="{{position.Y}}"/>
-
-</article>
+﻿
+<td style="width: 40%;">
+    <!--<img src="{{gravatarUrl}}" alt="">-->
+    <img src="http://bootdey.com/img/Content/user_1.jpg" alt="">
+    <a ng-click="displayUser(user.Id)" class="user-link">{{user.Username}}</a> <span class="user-subhead">SellPriceTool</span>
+</td>
+<td style="width: 10%;">{{position.X}}</td>
+<td style="width: 10%;">{{position.Y}}</td>
+<td >
+    <a class="table-link"  ng-click="displayUser(user.Id)">
+        <span class="fa-stack">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+    <a class="table-link danger delete" ng-click="delete()">
+        <span class="fa-stack">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</td>

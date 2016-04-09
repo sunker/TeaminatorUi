@@ -20,12 +20,12 @@ namespace Teaminator.Web.Controllers
 
         [HttpGet]
         [Route("Add/{x},{y}")]
-        public int AddPosition(int x, int y)
+        public Position AddPosition(int x, int y)
         {
             var position = new Position() { Id = SettingsManager.Settings.Positions.Count, X = x, Y = y };
             SettingsManager.Settings.Positions.Add(position);
             SettingsManager.Save();
-            return position.Id;
+            return position;
         }
 
         [HttpGet]

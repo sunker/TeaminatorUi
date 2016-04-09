@@ -23,15 +23,6 @@ namespace Teaminator.WebApi.Controllers
             return Settings.SettingsManager.Settings.Users.FirstOrDefault(u => u.Id == id);
         }
 
-        [HttpGet]
-        [Route("add/{userName}")]
-        public int Post(string userName)
-        {
-            if (Settings.SettingsManager.Settings.Users.Any(u => u.Username == userName)) return -1;
-            var user = new User() {Username = userName, Id = Settings.SettingsManager.Settings.Users.Count};
-            Settings.SettingsManager.Settings.Users.Add(user);
-            Settings.SettingsManager.Save();
-            return user.Id;
-        }
+
     }
 }

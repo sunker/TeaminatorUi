@@ -41,6 +41,7 @@ app.service("formatPropertyService", [ function () {
             return formatData(data);
         }
         else {
+            //return { data: data };
             return data;
         }
     }

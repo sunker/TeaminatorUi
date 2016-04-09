@@ -9,7 +9,7 @@ app.directive("mapAdditionalUser", [
                 x: '@',
                 y: '@',
                 pos: '@',
-                showMapUserModal: '='
+                show: '='
             },
             link: function ($scope, element, attrs) {
             },
@@ -22,7 +22,7 @@ app.directive("mapAdditionalUser", [
                         } else {
                             placementService.mapUserToPosition(user.Id, $scope.pos).then(function (response) {
                                 if (response) {
-                                    $scope.showMapUserModal = false;
+                                    $scope.show= false;
                                     //$scope.$apply();
                                     var url = '/users/' + user.Id;
                                     $location.path(url);

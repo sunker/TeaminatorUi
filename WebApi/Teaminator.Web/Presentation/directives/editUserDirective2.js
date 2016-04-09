@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.directive("editUser", [function () {
+app.directive("editUserrDirective", [function () {
     return {
         restrict: 'EA',
         scope: {

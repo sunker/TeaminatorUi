@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller("userController", ["$scope", "userService", "placementService", "$routeParams", "missileService", function ($scope, userService, placementService, $routeParams, missileService) {
+app.controller("userProfileController", ["$scope", "userService", "placementService", "$routeParams", "missileService", function ($scope, userService, placementService, $routeParams, missileService) {
 
     if ($routeParams.id) {
         userService.getUser($routeParams.id).then(function (response) {
