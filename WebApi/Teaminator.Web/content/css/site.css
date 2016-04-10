@@ -104,6 +104,14 @@ body {
     color: #e74c3c;
 }
 
+.table a.table-link.warning {
+    color: orange;
+}
+
+.table a.table-link.green {
+    color: green;
+}
+
 .label {
     border-radius: 3px;
     font-size: 0.875em;

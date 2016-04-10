@@ -16,8 +16,17 @@ app.service("missileService", ["restResourceFactory", function (restResourceFact
         var self = this;
         this.getCurrentPosition().then(function (pos) {
             var currentX = pos[0];
-            self.aim(x - currentX, 0);
-        });
+            self.aim(x - currentX, 0);});
+    };
+
+    this.attack = function (username) {
+        var restReq = restResourceFactory(rootUrl + '/attack/' + username);
+        return restReq.get().$promise;
+    };
+
+    this.fire = function () {
+        var restReq = restResourceFactory(rootUrl + '/fire');
+        return restReq.get().$promise;
     };
 
     this.getCurrentPosition = function() {

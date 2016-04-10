@@ -7,7 +7,8 @@ app.directive("user", [function () {
             user: '=data',
             deleteUser: '&'
         },
-        controller: ['$scope', '$location', 'placementService', 'userService', function ($scope, $location, placementService, userService) {
+        controller: ['$scope', '$location', 'placementService', 'userService', 'missileService',
+            function ($scope, $location, placementService, userService, missileService) {
 
             $scope.gravatarUrl = "http://bootdey.com/img/Content/user_" + $scope.user.Id + ".jpg";
 
@@ -21,6 +22,14 @@ app.directive("user", [function () {
 
             $scope.delete = function() {
                 $scope.deleteUser({ id: $scope.user.Id });
+            };
+
+            $scope.fire = function () {
+                missileService.attack($scope.user.Username);
+            };
+
+            $scope.aim = function () {
+                missileService.aim($scope.position.X,$scope.position.Y);
             };
 
             $scope.displayUser = function (id) {

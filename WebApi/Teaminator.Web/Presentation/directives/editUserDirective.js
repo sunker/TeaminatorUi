@@ -36,6 +36,10 @@ app.directive("editUser", [function () {
                 missileService.aimY($scope.y);
             };
             
+            $scope.fire = function () {
+                missileService.fire();
+            };
+
             $scope.usernameCheck = function () {
                 userService.usernameExist($scope.username).then(function (response) {
                     if (!!response.data === true) {

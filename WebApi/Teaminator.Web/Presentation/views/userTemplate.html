@@ -7,13 +7,25 @@
 <td style="width: 10%;">{{position.X}}</td>
 <td style="width: 10%;">{{position.Y}}</td>
 <td >
-    <a class="table-link"  ng-click="displayUser(user.Id)">
+    <a class="table-link"  ng-click="displayUser(user.Id)" title="Edit">
         <span class="fa-stack">
             <i class="fa fa-square fa-stack-2x"></i>
             <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
         </span>
     </a>
-    <a class="table-link danger delete" ng-click="delete()">
+    <a class="table-link green delete" ng-click="aim()" title="Aim at">
+        <span class="fa-stack">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-hand-o-up fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+    <a class="table-link warning delete" ng-click="fire()" title="Fire">
+        <span class="fa-stack">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+    <a class="table-link danger delete" ng-click="delete()" title="delete">
         <span class="fa-stack">
             <i class="fa fa-square fa-stack-2x"></i>
             <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
