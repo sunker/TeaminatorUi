@@ -5,10 +5,12 @@
 <article id="user-profile" class="userDetail">
     <h2>{{user.Username}}</h2>
 
+    <p><strong>Team</strong><span>{{user.Team}}</span></p>
+
     <p><strong>X</strong><span>{{position.X}}</span></p>
 
     <p><strong>Y</strong><span>{{position.Y}}</span></p>
 
-    <edit-User parentusername="user.Username" pos="{{position.Id}}" userid="{{user.Id}}" parentx="position.X" parenty="position.Y"/>
+    <edit-User parentusername="user.Username"  pos="{{position.Id}}" userid="{{user.Id}}" parentx="position.X" parenty="position.Y" />
 
 </article>

@@ -112,6 +112,10 @@ body {
     color: green;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 .label {
     border-radius: 3px;
     font-size: 0.875em;
