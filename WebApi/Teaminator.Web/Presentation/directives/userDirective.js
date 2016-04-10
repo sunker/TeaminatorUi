@@ -14,9 +14,12 @@ app.directive("user", [function () {
 
             userService.getUser($scope.user.Id).then(function (response) {
                 $scope.user = response;
+                if ($scope.user.team === undefined) {
+                    $scope.user.team = "SellPriceTool"; //TODO: REmove this
+                }
                 placementService.getUserPosition($scope.user.Id).then(function (response) {
                     $scope.position = response;
-                    //missileService.aim($scope.position.X, $scope.position.Y);
+                    missileService.aim($scope.position.X, $scope.position.Y);
                 });
             });
 
